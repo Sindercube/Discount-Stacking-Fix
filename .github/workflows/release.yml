@@ -29,7 +29,7 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.2
         with:
 
-          name: Discount Stacking Fix - v${{ github.event.release.tag_name }}
+          name: Discount Stacking Fix v${{ github.event.release.tag_name }}
           game-versions: |
             1.19.4
             1.19.3
