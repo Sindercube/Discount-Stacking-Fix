@@ -21,11 +21,6 @@
 
   "mixins": [
     "dsf.mixins.json"
-  ],
-  "entrypoints": {
-    "main": [
-      "com.sindercube.dsf.DiscountStackingFixMod"
-    ]
-  }
+  ]
 
 }
