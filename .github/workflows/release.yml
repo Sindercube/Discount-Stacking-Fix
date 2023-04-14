@@ -20,7 +20,7 @@ jobs:
 
       - name: Set Version
         run: |
-          sed "s/mod_version = 1.0/mod_version = ${{ github.event.release.tag_name }}" -i gradle.properties
+          sed "s/mod_version = 1.0/mod_version = ${{ github.event.release.tag_name }}/" -i gradle.properties
 
       - name: Build
         run: ./gradlew build
@@ -29,14 +29,7 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.2
         with:
 
-          modrinth-id: zhGm5cj4
-          github-tag: ${{ github.event.release.tag_name }}
-          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          changelog: ${{ github.event.release.body }}
-
-          name: Discount Stacking Fix ${{ github.event.release.tag_name }}
-
+          name: Discount Stacking Fix - v${{ github.event.release.tag_name }}
           game-versions: |
             1.19.4
             1.19.3
@@ -54,10 +47,13 @@ jobs:
             1.16.2
             1.16.1
             1.16
-
-
           loaders: |
             fabric
-
           java: |
             8
+
+          modrinth-id: zhGm5cj4
+          github-tag: ${{ github.event.release.tag_name }}
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          changelog: ${{ github.event.release.body }}
