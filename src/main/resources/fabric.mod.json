@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "dsf",
+  "version": "${version}",
+
+  "name": "Discount Stacking Fix",
+  "description": "Makes curing villagers only lower their prices once. Fixes MC-181190.",
+  "authors": [
+    "Sindercube"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/discount-stacking-fix",
+    "sources": "https://github.com/Sindercube/DSF"
+  },
+
+  "license": "GPL-3.0",
+  "icon": "assets/dsf/icon.png",
+  "depends": {
+    "fabricloader": ">=0.14.7"
+  },
+
+  "mixins": [
+    "dsf.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "com.sindercube.dsf.DiscountStackingFixMod"
+    ]
+  }
+
+}
