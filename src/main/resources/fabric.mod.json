@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Discount Stacking Fix",
-  "description": "Makes curing villagers only lower their prices once. Fixes MC-181190.",
+  "description": "Completely removes villager curing discounts, technically fixing MC-181190.",
   "authors": [
     "Sindercube"
   ],
