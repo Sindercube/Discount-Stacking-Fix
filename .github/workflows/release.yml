@@ -1,8 +1,7 @@
 name: Release
 on: 
-  push:
-    tags:
-      - '*'
+  release:
+    types: [published]
   workflow_dispatch:
 
 
@@ -21,7 +20,7 @@ jobs:
 
       - name: Set Version
         run: |
-          sed "s/mod_version = 1.0/mod_version = ${{ steps.info.outputs.version }}" -i gradle.properties
+          sed "s/mod_version = 1.0/mod_version = ${{ github.event.release.tag_name }}" -i gradle.properties
 
       - name: Build
         run: ./gradlew build
@@ -31,11 +30,12 @@ jobs:
         with:
 
           modrinth-id: zhGm5cj4
-          github-tag: ${{ steps.info.outputs.version }}
+          github-tag: ${{ github.event.release.tag_name }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          changelog: ${{ github.event.release.body }}
 
-          name: Discount Stacking Fix ${{ steps.info.outputs.version }}
+          name: Discount Stacking Fix ${{ github.event.release.tag_name }}
 
           game-versions: |
             1.19.4
