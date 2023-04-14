@@ -54,7 +54,7 @@ jobs:
 
           modrinth-id: zhGm5cj4
 
-          files-primary: build/libs/!(*-@(dev|sources|javadoc)).jar
+          files-secondary: ""
           github-tag: ${{ github.event.release.tag_name }}
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
